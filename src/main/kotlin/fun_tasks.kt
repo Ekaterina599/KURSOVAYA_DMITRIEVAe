@@ -112,7 +112,7 @@ fun FINDTASKS() {
 }
 
 //ПОИСК ПО КРИТЕРИЮ: НАЗВАНИЕ ЗАДАНИЯ
-fun criterionNAME() { // Поиск задания по названию предмета
+fun criterionNAME() { // 
     print("\n\nВведите наименование задания: ")
     val CRITERIONname = readLine() ?: ""
     val resultFind = tasks.filter { it.name == CRITERIONname}
