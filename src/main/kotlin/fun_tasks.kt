@@ -3,7 +3,7 @@ val scan = java.util.Scanner(System. `in`)
 //ДОБАВЛЕНИЕ ДАННЫХ ЗАДАНИЯ
 fun addDATE(): String {
     println("Введите дедлайн(дату сдачи) задания в формате (dd.MM.yyyy)")
-    var date = readLine() ?: "01.01.2000"
+    var date = readLine().toString()
     var output = true
     while(output) {
         if (date.isBlank()) {
@@ -38,7 +38,7 @@ fun addTYPE(): Int? {
         println("1: Лабораторная")
         println("2: Лекционное задание")
         println("3: Практическое задание")
-        Type = readLine()?.toIntOrNull()
+        Type = readLine()!!.toInt()
     } while (Type !in 1..3)
        return Type
 }
@@ -84,7 +84,7 @@ fun ALLTASKS() {
     println("$NUMBERtasks -> Возврат в основное меню")
 
     //При выборе соотсвующего номера задания выводится
-    val number: Int = readLine()?.toIntOrNull() ?: 0
+    val number: Int = readLine()!!.toInt()
     when (number) {
         in 1..tasks.size -> { tasks[number - 1].SCANtasks() }
         NUMBERtasks -> return
@@ -114,7 +114,7 @@ fun FINDTASKS() {
 //ПОИСК ПО КРИТЕРИЮ: НАЗВАНИЕ ЗАДАНИЯ
 fun criterionNAME() { // 
     print("\n\nВведите наименование задания: ")
-    val CRITERIONname = readLine() ?: ""
+    val CRITERIONname = readLine().toString()
     val resultFind = tasks.filter { it.name == CRITERIONname}
     //ВЫДАЕМ ПО КРИТЕРИЮ ПОИСКА СООТВЕТСТВУЮЩИЙ РЕЗУЛЬТАТ
     if (resultFind.isNotEmpty()) {
