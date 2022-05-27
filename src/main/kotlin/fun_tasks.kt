@@ -9,7 +9,7 @@ fun addDATE(): String {
         if (date.isBlank()) {
             println("Ошибка. Возможно вы забыли указать наименование задания.\n" +
                     "Введите наименование задания")
-            date = readLine() ?: "01.01.2000"
+            date = readLine().toString()
         }  else {
             output = false
         }
@@ -59,7 +59,7 @@ fun addDESCRIPTION(): String {
 }
 fun addMAXGRADE(): Int {
     println("Введите МАКСИМАЛЬНЫЙ БАЛЛ ЗА ЗАДАНИЕ")
-    var maxGrades = readLine()?.toIntOrNull() ?: 0
+    var maxGrades = readLine()!!.toInt()
     return maxGrades
 }
 
@@ -101,7 +101,7 @@ fun FINDTASKS() {
     println("\n\nВыберите КРИТЕРИЙ ЗАДАНИЙ для поиска:")
     println("1 -> По наименованию задания")
     println("2 -> Вернуться в главное меню\n")
-    when (readLine()?.toIntOrNull()) {
+    when (readLine()!!.toInt()) {
         1 -> criterionNAME()
         2 -> return
         else -> {
